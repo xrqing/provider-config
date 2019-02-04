@@ -1,0 +1,25 @@
+﻿eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka1.com:8080/eureka/,http://www.eureka2.com:8081/eureka/
+spring:
+  application:
+    name: user-provider
+---
+spring:
+  profiles:provider1
+server:
+  port: 9090
+ eureka:
+  instance:
+    instance-id: user1
+    prefer-ip-address: true
+---
+spring:
+  profiles:provider2
+server:
+  port: 9091
+ eureka:
+  instance:
+    instance-id: user2
+    prefer-ip-address: true
